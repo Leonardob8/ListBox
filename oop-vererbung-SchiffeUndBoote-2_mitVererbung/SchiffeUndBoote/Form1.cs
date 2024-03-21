@@ -5,8 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SchiffeUndBoote
 {
@@ -16,10 +18,50 @@ namespace SchiffeUndBoote
         List<Besitzer> Besitzers = new List<Besitzer>();
 
 
+
+
+
         public Form1()
         {
             InitializeComponent();
             //lbxbesitzer.DataSource = besitzers;
+        }
+
+
+        static bool NurBuchstaben(string text)
+        {
+            // Regex-Pattern, das nur Buchstaben zulässt
+            string pattern = "^[a-zA-Z]+$";
+
+            // Überprüfen, ob der übergebene Text dem Pattern entspricht
+            return Regex.IsMatch(text, pattern);
+        }
+
+        static bool NurZahlen(string text)
+        {
+            // Regex-Pattern, das nur Buchstaben zulässt
+            string pattern = "^[0-9]+$";
+
+            // Überprüfen, ob der übergebene Text dem Pattern entspricht
+            return Regex.IsMatch(text, pattern);
+        }
+
+    //-----
+        private bool EnthältSonderzeichen(string text)
+        {
+            // Regex-Pattern, das nur Buchstaben und Zahlen zulässt
+            string pattern = "^[a-zA-Z0-9]+$";
+            // Überprüfen, ob der Text nicht dem Pattern entspricht (also Sonderzeichen enthält)
+            return !Regex.IsMatch(text, pattern);
+        }
+
+        // Funktion zum Entfernen von Sonderzeichen aus dem Text
+        private string EntferneSonderzeichen(string text)
+        {
+            // Regex-Pattern, das Sonderzeichen findet
+            string pattern = "[^a-zA-Z0-9]";
+            // Entfernen von Sonderzeichen aus dem Text und Rückgabe des bereinigten Texts
+            return Regex.Replace(text, pattern, "");
         }
 
 
@@ -43,6 +85,8 @@ namespace SchiffeUndBoote
             tbxHausnummer.Clear();
             tbxPlz.Clear();
             tbxOrt.Clear();
+
+
 
         }
 
@@ -89,7 +133,7 @@ namespace SchiffeUndBoote
             tbxHausnummer.Text = Besitzers[auswahl].Hausnummer;
             tbxPlz.Text = Besitzers[auswahl].Plz;
             tbxOrt.Text = Besitzers[auswahl].Ort;
-                
+
 
         }
 
@@ -97,8 +141,73 @@ namespace SchiffeUndBoote
         {
             Form Form1 = new Form1();
             Form1.Show();
-            this.Close();  
+            this.Close();
 
+        }
+
+        private void tbxVorname_TextChanged(object sender, EventArgs e)
+        {
+            if (!NurBuchstaben(tbxVorname.Text))
+            {
+                // Falls der Text nicht nur Buchstaben enthält, entferne die letzten eingegebenen Zeichen
+                tbxVorname.Text = Regex.Replace(tbxVorname.Text, "[^a-zA-Z]", "");
+                // Zeige eine Benachrichtigung an den Benutzer
+                MessageBox.Show("Nur Buchstaben sind erlaubt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void tbxNachname_TextChanged(object sender, EventArgs e)
+        {
+            if (!NurBuchstaben(tbxNachname.Text))
+            {
+                // Falls der Text nicht nur Buchstaben enthält, entferne die letzten eingegebenen Zeichen
+                tbxNachname.Text = Regex.Replace(tbxNachname.Text, "[^a-zA-Z]", "");
+                // Zeige eine Benachrichtigung an den Benutzer
+                MessageBox.Show("Nur Buchstaben sind erlaubt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void tbxStrasse_TextChanged(object sender, EventArgs e)
+        {
+            if (!NurBuchstaben(tbxStrasse.Text))
+            {
+                // Falls der Text nicht nur Buchstaben enthält, entferne die letzten eingegebenen Zeichen
+                tbxStrasse.Text = Regex.Replace(tbxStrasse.Text, "[^a-zA-Z]", "");
+                // Zeige eine Benachrichtigung an den Benutzer
+                MessageBox.Show("Nur Buchstaben sind erlaubt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void tbxHausnummer_TextChanged(object sender, EventArgs e)
+        {
+            if (EnthältSonderzeichen(tbxHausnummer.Text))
+            {
+                // Falls der Text Sonderzeichen enthält, entferne die letzten eingegebenen Zeichen
+                tbxHausnummer.Text = EntferneSonderzeichen(tbxHausnummer.Text);
+                // Zeige eine Benachrichtigung an den Benutzer
+                MessageBox.Show("Keine Sonderzeichen erlaubt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void tbxPlz_TextChanged(object sender, EventArgs e)
+        {
+            if (!NurZahlen(tbxPlz.Text))
+            {
+                // Falls der Text nicht nur Zahlen enthält, entferne die letzten eingegebenen Zeichen
+                tbxPlz.Text = Regex.Replace(tbxPlz.Text, "[^0-9]", "");
+                // Zeige eine Benachrichtigung an den Benutzer
+                MessageBox.Show("Nur Zahlen sind erlaubt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void tbxOrt_TextChanged(object sender, EventArgs e)
+        {
+            if (!NurBuchstaben(tbxOrt.Text))
+            {
+                // Falls der Text nicht nur Buchstaben enthält, entferne die letzten eingegebenen Zeichen
+                tbxOrt.Text = Regex.Replace(tbxOrt.Text, "[^a-zA-Z]", "");
+                // Zeige eine Benachrichtigung an den Benutzer
+                MessageBox.Show("Nur Buchstaben sind erlaubt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

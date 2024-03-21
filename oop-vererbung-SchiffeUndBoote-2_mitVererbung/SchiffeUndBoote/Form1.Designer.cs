@@ -56,7 +56,7 @@
             // 
             lbxBesitzer.FormattingEnabled = true;
             lbxBesitzer.ItemHeight = 20;
-            lbxBesitzer.Location = new Point(12, 46);
+            lbxBesitzer.Location = new Point(89, 46);
             lbxBesitzer.Name = "lbxBesitzer";
             lbxBesitzer.Size = new Size(150, 224);
             lbxBesitzer.TabIndex = 0;
@@ -65,56 +65,56 @@
             // labelvorname
             // 
             labelvorname.AutoSize = true;
-            labelvorname.Location = new Point(190, 46);
+            labelvorname.Location = new Point(361, 46);
             labelvorname.Name = "labelvorname";
-            labelvorname.Size = new Size(68, 20);
+            labelvorname.Size = new Size(71, 20);
             labelvorname.TabIndex = 1;
-            labelvorname.Text = "Vorname";
+            labelvorname.Text = "Vorname:";
             // 
             // labelnachname
             // 
             labelnachname.AutoSize = true;
-            labelnachname.Location = new Point(190, 91);
+            labelnachname.Location = new Point(361, 91);
             labelnachname.Name = "labelnachname";
-            labelnachname.Size = new Size(80, 20);
+            labelnachname.Size = new Size(83, 20);
             labelnachname.TabIndex = 2;
-            labelnachname.Text = "Nachname";
+            labelnachname.Text = "Nachname:";
             // 
             // labelstrasse
             // 
             labelstrasse.AutoSize = true;
-            labelstrasse.Location = new Point(190, 132);
+            labelstrasse.Location = new Point(361, 132);
             labelstrasse.Name = "labelstrasse";
-            labelstrasse.Size = new Size(55, 20);
+            labelstrasse.Size = new Size(58, 20);
             labelstrasse.TabIndex = 3;
-            labelstrasse.Text = "Strasse";
+            labelstrasse.Text = "Strasse:";
             // 
             // Labelhausnummer
             // 
             Labelhausnummer.AutoSize = true;
-            Labelhausnummer.Location = new Point(190, 170);
+            Labelhausnummer.Location = new Point(361, 170);
             Labelhausnummer.Name = "Labelhausnummer";
-            Labelhausnummer.Size = new Size(97, 20);
+            Labelhausnummer.Size = new Size(100, 20);
             Labelhausnummer.TabIndex = 4;
-            Labelhausnummer.Text = "Hausnummer";
+            Labelhausnummer.Text = "Hausnummer:";
             // 
             // labelpostleitzahl
             // 
             labelpostleitzahl.AutoSize = true;
-            labelpostleitzahl.Location = new Point(190, 209);
+            labelpostleitzahl.Location = new Point(361, 209);
             labelpostleitzahl.Name = "labelpostleitzahl";
-            labelpostleitzahl.Size = new Size(84, 20);
+            labelpostleitzahl.Size = new Size(87, 20);
             labelpostleitzahl.TabIndex = 5;
-            labelpostleitzahl.Text = "Postleitzahl";
+            labelpostleitzahl.Text = "Postleitzahl:";
             // 
             // labelort
             // 
             labelort.AutoSize = true;
-            labelort.Location = new Point(190, 250);
+            labelort.Location = new Point(361, 250);
             labelort.Name = "labelort";
-            labelort.Size = new Size(30, 20);
+            labelort.Size = new Size(33, 20);
             labelort.TabIndex = 6;
-            labelort.Text = "Ort";
+            labelort.Text = "Ort:";
             // 
             // label1
             // 
@@ -126,61 +126,67 @@
             // 
             // tbxVorname
             // 
-            tbxVorname.Location = new Point(325, 46);
+            tbxVorname.Location = new Point(496, 46);
             tbxVorname.Name = "tbxVorname";
             tbxVorname.Size = new Size(125, 27);
             tbxVorname.TabIndex = 9;
+            tbxVorname.TextChanged += tbxVorname_TextChanged;
             // 
             // tbxNachname
             // 
-            tbxNachname.Location = new Point(325, 88);
+            tbxNachname.Location = new Point(496, 88);
             tbxNachname.Name = "tbxNachname";
             tbxNachname.Size = new Size(125, 27);
             tbxNachname.TabIndex = 10;
+            tbxNachname.TextChanged += tbxNachname_TextChanged;
             // 
             // tbxStrasse
             // 
-            tbxStrasse.Location = new Point(325, 132);
+            tbxStrasse.Location = new Point(496, 132);
             tbxStrasse.Name = "tbxStrasse";
             tbxStrasse.Size = new Size(125, 27);
             tbxStrasse.TabIndex = 11;
+            tbxStrasse.TextChanged += tbxStrasse_TextChanged;
             // 
             // tbxHausnummer
             // 
-            tbxHausnummer.Location = new Point(325, 167);
+            tbxHausnummer.Location = new Point(496, 167);
             tbxHausnummer.Name = "tbxHausnummer";
             tbxHausnummer.Size = new Size(125, 27);
             tbxHausnummer.TabIndex = 12;
+            tbxHausnummer.TextChanged += tbxHausnummer_TextChanged;
             // 
             // tbxPlz
             // 
-            tbxPlz.Location = new Point(325, 206);
+            tbxPlz.Location = new Point(496, 206);
             tbxPlz.Name = "tbxPlz";
             tbxPlz.Size = new Size(125, 27);
             tbxPlz.TabIndex = 13;
+            tbxPlz.TextChanged += tbxPlz_TextChanged;
             // 
             // tbxOrt
             // 
-            tbxOrt.Location = new Point(325, 243);
+            tbxOrt.Location = new Point(496, 243);
             tbxOrt.Name = "tbxOrt";
             tbxOrt.Size = new Size(125, 27);
             tbxOrt.TabIndex = 14;
+            tbxOrt.TextChanged += tbxOrt_TextChanged;
             // 
             // btnNeuBesitzer
             // 
-            btnNeuBesitzer.Location = new Point(27, 276);
+            btnNeuBesitzer.Location = new Point(89, 276);
             btnNeuBesitzer.Name = "btnNeuBesitzer";
-            btnNeuBesitzer.Size = new Size(120, 46);
+            btnNeuBesitzer.Size = new Size(150, 46);
             btnNeuBesitzer.TabIndex = 15;
-            btnNeuBesitzer.Text = "Neu";
+            btnNeuBesitzer.Text = "Neu ";
             btnNeuBesitzer.UseVisualStyleBackColor = true;
             btnNeuBesitzer.Click += btnneubesitzer_Click;
             // 
             // btnBearbeitenBesitzer
             // 
-            btnBearbeitenBesitzer.Location = new Point(27, 328);
+            btnBearbeitenBesitzer.Location = new Point(89, 328);
             btnBearbeitenBesitzer.Name = "btnBearbeitenBesitzer";
-            btnBearbeitenBesitzer.Size = new Size(120, 46);
+            btnBearbeitenBesitzer.Size = new Size(150, 46);
             btnBearbeitenBesitzer.TabIndex = 16;
             btnBearbeitenBesitzer.Text = "Bearbeiten";
             btnBearbeitenBesitzer.UseVisualStyleBackColor = true;

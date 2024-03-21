@@ -151,8 +151,8 @@ namespace SchiffeUndBoote
             {
                 // Falls der Text nicht nur Buchstaben enthält, entferne die letzten eingegebenen Zeichen
                 tbxVorname.Text = Regex.Replace(tbxVorname.Text, "[^a-zA-Z]", "");
-                // Zeige eine Benachrichtigung an den Benutzer
-                MessageBox.Show("Nur Buchstaben sind erlaubt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+               
             }
         }
         private void tbxNachname_TextChanged(object sender, EventArgs e)
@@ -161,8 +161,7 @@ namespace SchiffeUndBoote
             {
                 // Falls der Text nicht nur Buchstaben enthält, entferne die letzten eingegebenen Zeichen
                 tbxNachname.Text = Regex.Replace(tbxNachname.Text, "[^a-zA-Z]", "");
-                // Zeige eine Benachrichtigung an den Benutzer
-                MessageBox.Show("Nur Buchstaben sind erlaubt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
         }
 
@@ -172,8 +171,7 @@ namespace SchiffeUndBoote
             {
                 // Falls der Text nicht nur Buchstaben enthält, entferne die letzten eingegebenen Zeichen
                 tbxStrasse.Text = Regex.Replace(tbxStrasse.Text, "[^a-zA-Z]", "");
-                // Zeige eine Benachrichtigung an den Benutzer
-                MessageBox.Show("Nur Buchstaben sind erlaubt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+             
             }
         }
 
@@ -183,8 +181,7 @@ namespace SchiffeUndBoote
             {
                 // Falls der Text Sonderzeichen enthält, entferne die letzten eingegebenen Zeichen
                 tbxHausnummer.Text = EntferneSonderzeichen(tbxHausnummer.Text);
-                // Zeige eine Benachrichtigung an den Benutzer
-                MessageBox.Show("Keine Sonderzeichen erlaubt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+              
             }
         }
 
@@ -194,8 +191,7 @@ namespace SchiffeUndBoote
             {
                 // Falls der Text nicht nur Zahlen enthält, entferne die letzten eingegebenen Zeichen
                 tbxPlz.Text = Regex.Replace(tbxPlz.Text, "[^0-9]", "");
-                // Zeige eine Benachrichtigung an den Benutzer
-                MessageBox.Show("Nur Zahlen sind erlaubt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
             }
         }
 
@@ -205,8 +201,7 @@ namespace SchiffeUndBoote
             {
                 // Falls der Text nicht nur Buchstaben enthält, entferne die letzten eingegebenen Zeichen
                 tbxOrt.Text = Regex.Replace(tbxOrt.Text, "[^a-zA-Z]", "");
-                // Zeige eine Benachrichtigung an den Benutzer
-                MessageBox.Show("Nur Buchstaben sind erlaubt.", "Hinweis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
             }
         }
     }
